@@ -13,7 +13,7 @@ adjust IPs in ksem_idm.sh file
 
 adjust execution in ksem_idm_cron file
 
-```sudo docker build -t ksem_idm:1.0 .```
+```sudo docker build -f Dockerfile -t ksem_idm:1.0 .```
 
 ```sudo docker run -d --name ksem_idm ksem_idm:1.0```
 
