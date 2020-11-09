@@ -5,7 +5,7 @@ RUN apt update
 RUN apt -y install wget gnupg2 bc cron
 RUN wget -O- http://www.piduino.org/piduino-key.asc | apt-key add -
 # here we have to use Raspbian sources to get Piduino armhf package
-RUN echo 'deb http://raspbian.piduino.org stretch piduino' | sudo tee /etc/apt/sources.list.d/piduino.list
+RUN echo 'deb http://raspbian.piduino.org stretch piduino' | tee /etc/apt/sources.list.d/piduino.list
 RUN apt update
 RUN apt -y install mbpoll
 
