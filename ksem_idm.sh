@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# please use your local IPs here
 ip_ksem=192.168.2.10
 ip_idm=192.168.2.21
 
@@ -22,7 +24,7 @@ fed_in_energy=$(echo "scale=4; $fed_in_energy/10000" | bc -l )
 
 # print it out
 now=$(date +"%d.%m.%Y %T")
-echo "$now - current fed-in energy from KSEM (kW): " $fed_in_energy
+echo "$now - current fed-in energy from KSEM $ip_ksem (kW): " $fed_in_energy
 
 # send value to iDM pump (Adress 74) (-0: First reference is 0 (PDU addressing) instead 1)
 output_idm=$(mbpoll -0 -r 74 -t 4:float $ip_idm $fed_in_energy)
