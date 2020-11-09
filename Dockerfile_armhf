@@ -1,4 +1,4 @@
-FROM whatever4711/armbian-build
+FROM twhtanghk/armbian
 
 # install bc, cron and mbpoll
 RUN apt update
