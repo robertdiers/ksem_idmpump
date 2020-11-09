@@ -8,7 +8,7 @@ adjust IPs in ksem_idm.sh file
 
 ```./ksem_idm.sh```
 
-### Docker usage
+### Docker usage (please use Dockerfile_armhf for ARM devices)
 adjust IPs in ksem_idm.sh file
 
 adjust execution in ksem_idm_cron file
