@@ -8,5 +8,5 @@ adjust execution in ksem_idm_cron file
 
 ```sudo docker build -t ksem_idm:1.0 .```
 
-```sudo docker run --env IPKSEM=192.168.2.10 --env IPIDM=192.168.2.21 ksem_idm:1.0```
+```sudo docker run ksem_idm:1.0```
 
