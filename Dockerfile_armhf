@@ -1,8 +1,8 @@
 FROM debian:stable-slim
 
-# install wget, gnupg2, software-properties-common, bc, cron and mbpoll
+# install wget, gnupg2, bc, cron and mbpoll
 RUN apt update
-RUN apt -y install wget gnupg2 software-properties-common bc cron
+RUN apt -y install wget gnupg2 bc cron
 RUN wget -O- http://www.piduino.org/piduino-key.asc | apt-key add -
 # here we have to use Raspbian sources to get Piduino armhf package
 RUN echo 'deb http://raspbian.piduino.org stretch piduino' | sudo tee /etc/apt/sources.list.d/piduino.list
