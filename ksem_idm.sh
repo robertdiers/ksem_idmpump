@@ -2,7 +2,7 @@
 
 # please use your local IPs here
 ip_ksem=192.168.2.10
-ip_idm=192.168.2.21
+ip_idm=192.168.2.18
 
 # read KSEM (Adress 4) (KSEM Software Version 1.2.1)
 output_ksem=$(mbpoll -r 4 -c 1 -1 $ip_ksem)
