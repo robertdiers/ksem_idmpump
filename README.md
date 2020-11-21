@@ -15,7 +15,7 @@ adjust execution in ksem_idm_cron file
 
 ```sudo docker build -f Dockerfile -t ksem_idm:1.0 .```
 
-```sudo docker run -d --name ksem_idm ksem_idm:1.0```
+```sudo docker run -d --name ksem_idm --restart=always ksem_idm:1.0```
 
 ```sudo docker logs ksem_idm```
 
