@@ -1,5 +1,5 @@
 #FROM twhtanghk/armbian
-FROM openhd/armbian_20.08_buster_arm64
+FROM armbian/build
 
 # install bc, cron and mbpoll
 RUN apt update
