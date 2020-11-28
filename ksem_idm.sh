@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # please use your local IPs here
-ip_ksem=192.168.2.10
-ip_idm=192.168.2.18
+ip_ksem=192.168.1.4
+ip_idm=192.168.1.3
 mail_receiver=robertdiers@gmail.com
 
 # read KSEM (Adress 4) (KSEM Software Version 1.2.1)
@@ -44,7 +44,7 @@ fi
 
 # 1 success mail per day
 currenttime=$(date +%H:%M:%S)
- if [[ "$currenttime" > "12:00:00" ]] || [[ "$currenttime" < "12:00:30" ]]; then
+ if [[ "$currenttime" > "11:00:00" ]] || [[ "$currenttime" < "11:00:30" ]]; then
   echo "$now - actual fed-in energy: $fed_in_energy (kW)" | sendmail -v $mail_receiver
  fi
 
