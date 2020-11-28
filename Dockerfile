@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 # install wget, gnupg2, software-properties-common, bc, cron and mbpoll
 RUN apt update
-RUN apt -y install wget gnupg2 software-properties-common bc cron sendmail
+RUN apt -y install wget gnupg2 software-properties-common bc cron
 RUN wget -O- http://www.piduino.org/piduino-key.asc | apt-key add -
 RUN add-apt-repository 'deb http://apt.piduino.org stretch piduino'
 RUN apt update
