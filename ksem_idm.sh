@@ -3,6 +3,7 @@
 # please use your local IPs here
 ip_ksem=192.168.2.10
 ip_idm=192.168.2.18
+mail_receiver=robertdiers@gmail.com
 
 # read KSEM (Adress 4) (KSEM Software Version 1.2.1)
 output_ksem=$(mbpoll -r 4 -c 1 -1 $ip_ksem)
@@ -37,7 +38,15 @@ if [[ $output_idm == *"Written 1 references"* ]]; then
 else
   echo "$now - failed sending $fed_in_energy to $ip_idm"
   echo $output_idm
+  # error mail
+  echo "$now - failed sending $fed_in_energy to $ip_idm, please check container log" | sendmail -v $mail_receiver
 fi
+
+# 1 success mail per day
+currenttime=$(date +%H:%M:%S)
+ if [[ "$currenttime" > "12:00:00" ]] || [[ "$currenttime" < "12:00:30" ]]; then
+  echo "$now - actual fed-in energy: $fed_in_energy (kW)" | sendmail -v $mail_receiver
+ fi
 
 # now we want to read the updated value
 output_idm=$(mbpoll -0 -r 74 -c 1 -1 -t 4:float $ip_idm)

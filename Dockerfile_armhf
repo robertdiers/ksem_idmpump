@@ -2,7 +2,7 @@ FROM twhtanghk/armbian
 
 # install bc, cron and mbpoll
 RUN apt update
-RUN apt -y install bc cron mbpoll
+RUN apt -y install bc cron mbpoll sendmail
 
 # copy files
 COPY ksem_idm.sh /app/ksem_idm.sh
