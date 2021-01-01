@@ -47,7 +47,7 @@ echo "$now - battery-load from Plenticore $ip_plenticore (unknown): " $battery_e
 now=$(date +"%d.%m.%Y %T")
 if [[ $battery_energy == 0 ]]; then
   if [ 1 -eq "$(echo "${fed_in_energy} < $min_kw" | bc)" ];  then  
-    echo "$now - less than $min_kw KW, sending 0"
+    echo "$now - less than $min_kw kW, sending 0"
     fed_in_energy=0
   fi
 else
