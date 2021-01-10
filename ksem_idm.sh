@@ -4,7 +4,7 @@
 ip_ksem=192.168.1.4
 ip_idm=192.168.1.3
 ip_plenticore=192.168.1.5
-min_kw=0.5
+min_kw=1.0
 
 # read KSEM (Adress 4) (KSEM Software Version 1.2.1)
 output_ksem=$(mbpoll -r 4 -c 1 -1 $ip_ksem)
