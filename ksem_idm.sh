@@ -3,7 +3,7 @@
 # please use your local IPs here
 ip_ksem=192.168.1.4
 ip_idm=192.168.1.3
-ip_plenticore=192.168.1.5
+#ip_plenticore=192.168.1.5
 min_kw=1.0
 
 # read KSEM (Adress 4) (KSEM Software Version 1.2.1)
@@ -27,33 +27,33 @@ now=$(date +"%d.%m.%Y %T")
 echo "$now - fed-in energy from KSEM $ip_ksem (kW): " $fed_in_energy
 
 # read current load from battery (Adress 106, Port 1502, UnitID 71)
-output_plenticore=$(mbpoll -0 -r 106 -a 71 -c 1 -p 1502 -1 $ip_plenticore)
+#output_plenticore=$(mbpoll -0 -r 106 -a 71 -c 1 -p 1502 -1 $ip_plenticore)
 #echo $output_plenticore
 
 # extract the actual value
-output_plenticore_array=($output_plenticore)
-battery_energy=${output_plenticore_array[-1]}
+#output_plenticore_array=($output_plenticore)
+#battery_energy=${output_plenticore_array[-1]}
 
 # we need to ignore the value in brackets if it exists
-if [[ $battery_energy == *"("* ]]; then
-  battery_energy=${output_plenticore_array[-2]}
-fi
+#if [[ $battery_energy == *"("* ]]; then
+#  battery_energy=${output_plenticore_array[-2]}
+#fi
 
 # print it out
-now=$(date +"%d.%m.%Y %T")
-echo "$now - battery-load from Plenticore $ip_plenticore (unknown): " $battery_energy
+#now=$(date +"%d.%m.%Y %T")
+#echo "$now - battery-load from Plenticore $ip_plenticore (unknown): " $battery_energy
 
 # if battery discharge or less than min KW, send 0
 now=$(date +"%d.%m.%Y %T")
-if [[ $battery_energy == 0 ]]; then
+#if [[ $battery_energy == 0 ]]; then
   if [ 1 -eq "$(echo "${fed_in_energy} < $min_kw" | bc)" ];  then  
     echo "$now - less than $min_kw kW, sending 0"
     fed_in_energy=0
   fi
-else
-  echo "$now - battery discharge, sending 0"
-  fed_in_energy=0
-fi
+#else
+#  echo "$now - battery discharge, sending 0"
+#  fed_in_energy=0
+#fi
 
 # send value to iDM pump (Adress 74) (-0: First reference is 0 (PDU addressing) instead 1)
 output_idm=$(mbpoll -0 -r 74 -t 4:float $ip_idm $fed_in_energy)
