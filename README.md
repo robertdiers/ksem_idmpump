@@ -1,5 +1,5 @@
 # ksem_idmpump
-using TCP Modbus to send fed-in energy from Kostal Smart Energy Meter to iDM AERO SLM 6-17 including battery discharge check from Kostal Plenticore
+using TCP Modbus to send fed-in energy from Kostal Smart Energy Meter to iDM AERO SLM 6-17 from Kostal Plenticore
 (iDM Option "TCP Modbus" or "Gebäudeleittechnik/Smartfox" in German Version)
 
 ### Linux usage (you might want to use directly with cron)
