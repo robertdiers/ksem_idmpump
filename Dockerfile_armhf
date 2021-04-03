@@ -1,17 +1,9 @@
-#FROM twhtanghk/armbian
-FROM debian
+FROM twhtanghk/armbian
 
 # install bc, cron and mbpoll
 RUN apt update
 #RUN apt -y upgrade
-#RUN apt -y install bc cron mbpoll
-
-RUN apt -y upgrade
-RUN apt -y install wget gnupg2 software-properties-common bc cron
-RUN wget -O- http://www.piduino.org/piduino-key.asc | apt-key add -
-RUN add-apt-repository 'deb http://apt.piduino.org stretch piduino'
-RUN apt update
-RUN apt -y install mbpoll
+RUN apt -y install bc cron mbpoll
 
 # copy files
 COPY ksem_idm.sh /app/ksem_idm.sh
