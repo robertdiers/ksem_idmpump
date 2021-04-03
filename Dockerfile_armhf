@@ -1,9 +1,9 @@
-#FROM twhtanghk/armbian
-FROM debian
+FROM twhtanghk/armbian
+#FROM debian
 
 # install bc, cron and mbpoll
 RUN apt update
-RUN apt -y upgrade
+#RUN apt -y upgrade
 RUN apt -y install bc cron mbpoll
 
 # copy files
