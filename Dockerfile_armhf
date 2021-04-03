@@ -2,6 +2,7 @@ FROM twhtanghk/armbian
 
 # install bc, cron and mbpoll
 RUN apt update
+RUN apt -y upgrade
 RUN apt -y install bc cron mbpoll
 
 # copy files
