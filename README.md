@@ -1,3 +1,6 @@
+#OUTDATED FOR NEW KSEM - PLEASE USE THIS ONE: <https://github.com/robertdiers/kostal_idmpump>
+
+
 # ksem_idmpump
 using TCP Modbus to send fed-in energy from Kostal Smart Energy Meter to iDM AERO SLM 6-17 from Kostal Plenticore
 (iDM Option "TCP Modbus" or "Gebäudeleittechnik/Smartfox" in German Version)
